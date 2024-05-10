@@ -41,7 +41,7 @@ public class MovieRepository {
         Call<Result> call = movieAPIService.getPopulorMoies(application.getApplicationContext().getString(R.string.api_key));
 
         // Enqueue the call asynchronously
-        call.enqueue(new Callback<Result>() {
+        call.enqueue (new Callback<Result>() {
             @Override
             public void onResponse(Call<Result> call, Response<Result> response) {
                 // Handle successful response
