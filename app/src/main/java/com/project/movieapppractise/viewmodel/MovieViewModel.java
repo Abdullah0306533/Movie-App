@@ -1,4 +1,4 @@
-package com.project.movieapppractise.view;
+package com.project.movieapppractise.viewmodel;
 
 import android.app.Application;
 
