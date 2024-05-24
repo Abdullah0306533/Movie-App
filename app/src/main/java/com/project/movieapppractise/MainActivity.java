@@ -8,7 +8,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.project.movieapppractise.model.Movie;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    private ArrayList<Movie> movieArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
