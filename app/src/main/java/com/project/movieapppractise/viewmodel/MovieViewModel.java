@@ -15,7 +15,7 @@ import java.util.List;
  * ViewModel for managing movie data and providing it to the UI.
  */
 public class MovieViewModel extends AndroidViewModel {
-    private final MovieRepository repository;
+    private  MovieRepository repository;
 
     /**
      * Constructor for the MovieViewModel.
@@ -24,7 +24,7 @@ public class MovieViewModel extends AndroidViewModel {
      */
     public MovieViewModel(@NonNull Application application) {
         super(application);
-        repository = new MovieRepository(application);
+        this.repository = new MovieRepository(application);
     }
 
     /**

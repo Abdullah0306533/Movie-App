@@ -2,12 +2,14 @@ package com.project.movieapppractise.model;
 
 import android.widget.ImageView;
 
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-public class Movie {
+public class Movie extends BaseObservable {
     // Fields annotated with @SerializedName map the JSON keys to Java fields
     @SerializedName("id")
     @Expose
@@ -38,6 +40,7 @@ public class Movie {
     }
 
     // Getters and setters for accessing private fields
+    @Bindable
     public Integer getId() {
         return id;
     }
@@ -45,43 +48,34 @@ public class Movie {
     public void setId(Integer id) {
         this.id = id;
     }
-
+    @Bindable
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
 
+    @Bindable
     public String getPosterPath() {
         return posterPath;
     }
-
     public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
     }
 
+    @Bindable
     public String getReleaseDate() {
         return releaseDate;
     }
-
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
 
-    public String getOverview() {
-        return overview;
-    }
-
-    public void setOverview(String overview) {
-        this.overview = overview;
-    }
-
+    @Bindable
     public Double getVoteAverage() {
         return voteAverage;
     }
-
     public void setVoteAverage(Double voteAverage) {
         this.voteAverage = voteAverage;
     }

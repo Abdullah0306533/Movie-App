@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 // Interface for Movie API Service
 public interface MovieAPIService {
     // Method to get popular movies
-    @GET("movie/populor") // API endpoint for popular movies
+    @GET("movie/popular") // API endpoint for popular movies
     Call<Result> getPopulorMoies(@Query("api_key") String apiKey); // Query parameter for API key
 }
 

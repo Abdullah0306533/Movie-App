@@ -72,7 +72,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
      */
     @Override
     public int getItemCount() {
-        return movieArrayList != null ? movieArrayList.size() : 0;
+        return movieArrayList.size();
     }
 
     /**
@@ -96,6 +96,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
                 @Override
                 public void onClick(View v) {
                     // Handle click event
+                    int position = getAdapterPosition();
                 }
             });
         }

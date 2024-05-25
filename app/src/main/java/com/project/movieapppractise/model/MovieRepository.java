@@ -1,6 +1,9 @@
 package com.project.movieapppractise.model;
 
 import android.app.Application;
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.lifecycle.MutableLiveData;
 import com.project.movieapppractise.R;
 import com.project.movieapppractise.serviceapi.MovieAPIService;
@@ -17,7 +20,7 @@ public class MovieRepository {
     private ArrayList<Movie> movies = new ArrayList<>();
 
     // MutableLiveData to hold list of movies
-    private MutableLiveData<List<Movie>> mutableLiveData;
+    private MutableLiveData<List<Movie>> mutableLiveData=new MutableLiveData<>();
 
     // Reference to the application context
     private Application application;
@@ -29,10 +32,6 @@ public class MovieRepository {
 
     // Method to get MutableLiveData containing list of movies
     public MutableLiveData<List<Movie>> getMutableLiveData() {
-        // Check if MutableLiveData is null, initialize if needed
-        if (mutableLiveData == null) {
-            mutableLiveData = new MutableLiveData<>();
-        }
 
         // Initialize MovieAPIService using RetrofitInstance
         MovieAPIService movieAPIService = RetrofitInstance.getService();
@@ -57,8 +56,12 @@ public class MovieRepository {
             @Override
             public void onFailure(Call<Result> call, Throwable throwable) {
                 // Handle failure
+                Log.e("MovieRepository", "Failed to fetch movies", throwable);
+                Toast.makeText(application, "Failed to fetch movies", Toast.LENGTH_SHORT).show();
             }
-        });
+
+            }
+        );
 
         return mutableLiveData; // Return the MutableLiveData object
     }
